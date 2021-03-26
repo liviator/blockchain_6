@@ -1,5 +1,9 @@
 <template>
-  
+    <div id = "demo">
+        <vue-metamask userMessage="msg" @onComplete = "onComplete"> 
+            
+        </vue-metamask>
+    </div>
 </template>
 
 <script>
