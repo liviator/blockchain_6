@@ -1,10 +1,28 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about" v-if="!isLoggedIn">Initialise Metamask</router-link> |
+    <router-link to="/song" v-if="isLoggedIn">Song</router-link> |
+
   </div>
   <router-view/>
 </template>
+
+<script>
+import { mapGetters, mapState } from 'vuex'
+
+export default {
+  name: 'App',
+
+  computed: {
+    ...mapState({
+      user: state => state.user.data
+    }),
+    ...mapGetters(['isLoggedIn'])
+  }
+}
+</script>
+
 
 <style>
 #app {
