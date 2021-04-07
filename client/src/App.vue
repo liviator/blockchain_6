@@ -1,8 +1,7 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about" v-if="!isLoggedIn">Initialise Metamask</router-link> |
-    <router-link to="/song" v-if="isLoggedIn">Song</router-link> |
+    <router-link to="/about" >Initialise Metamask</router-link> |
 
   </div>
   <router-view/>
